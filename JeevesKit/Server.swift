@@ -9,10 +9,22 @@
 import Foundation
 import GCDWebServer
 
+
 public class Server {
-    private var server: GCDWebServer
     
-    public init() {
-        self.server = GCDWebServer()
-    }    
+    private let server = GCDWebServer()
+    private let resolver: RequestMapper
+    
+    class func factory() -> Server {
+        let urlResolver = LocalURLResolver()
+        let matchers: [RequestMatcher] = [
+            DirectRequestMatcher(),
+            IndexRequestMatcher()
+        ]
+        return Server(resolver: RequestMapper(matchers:matchers, resolver: LocalURLResolver()))
+    }
+    
+    public init(resolver: RequestMapper) {
+        self.resolver = resolver
+    }
 }

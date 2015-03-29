@@ -14,7 +14,6 @@
 		5C4706411AC79EF400E47931 /* JeevesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4706401AC79EF400E47931 /* JeevesTests.swift */; };
 		5C4706B71AC7AB7E00E47931 /* JeevesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C4706B61AC7AB7E00E47931 /* JeevesKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C4706BD1AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; };
-		5C4706C61AC7AB7E00E47931 /* JeevesKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */; };
 		5C4706C91AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; };
 		5C4706CA1AC7AB7E00E47931 /* JeevesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C4706D41AC7ABBA00E47931 /* GCDWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */; };
@@ -24,6 +23,7 @@
 		5C4C41FB1AC7AE0E00E51068 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D71AC7AC0600E47931 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C4C41FC1AC7AE1A00E51068 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D81AC7AC0600E47931 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C4C41FD1AC7AE3500E51068 /* GCDWebServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C4C41FF1AC7AEE500E51068 /* Resolvers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C41FE1AC7AEE500E51068 /* Resolvers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,13 +98,13 @@
 		5C4706B61AC7AB7E00E47931 /* JeevesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JeevesKit.h; sourceTree = "<group>"; };
 		5C4706BC1AC7AB7E00E47931 /* JeevesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeevesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4706C41AC7AB7E00E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeevesKitTests.swift; sourceTree = "<group>"; };
 		5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServer.framework; path = Carthage/Build/Mac/GCDWebServer.framework; sourceTree = "<group>"; };
 		5C4706D21AC7ABBA00E47931 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		5C4706D31AC7ABBA00E47931 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		5C4706D71AC7AC0600E47931 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
 		5C4706D81AC7AC0600E47931 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		5C4706DB1AC7AC4800E47931 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5C4C41FE1AC7AEE500E51068 /* Resolvers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolvers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +210,7 @@
 				5C4706B61AC7AB7E00E47931 /* JeevesKit.h */,
 				5C4706B41AC7AB7E00E47931 /* Supporting Files */,
 				5C4706DB1AC7AC4800E47931 /* Server.swift */,
+				5C4C41FE1AC7AEE500E51068 /* Resolvers.swift */,
 			);
 			path = JeevesKit;
 			sourceTree = "<group>";
@@ -225,7 +226,6 @@
 		5C4706C21AC7AB7E00E47931 /* JeevesKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */,
 				5C4706C31AC7AB7E00E47931 /* Supporting Files */,
 			);
 			path = JeevesKitTests;
@@ -444,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C4706DC1AC7AC4800E47931 /* Server.swift in Sources */,
+				5C4C41FF1AC7AEE500E51068 /* Resolvers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +452,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C4706C61AC7AB7E00E47931 /* JeevesKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
