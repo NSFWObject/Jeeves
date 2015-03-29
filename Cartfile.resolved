@@ -1,3 +1,5 @@
-github "swisspol/GCDWebServer" "3.2.2"
-github "quick/nimble" "v0.4.1"
-github "quick/quick" "v0.3.0"
+github "swisspol/GCDWebServer" "047fdddb0e775dde72b9f4dd24729faad4c340b1"
+github "Quick/Nimble" "v0.4.1"
+github "Quick/Quick" "v0.3.0"
+github "thoughtbot/runes" "v1.2.2"
+github "thoughtbot/Argo" "v0.4.3"

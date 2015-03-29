@@ -12,6 +12,18 @@
 		5C4706321AC79EF400E47931 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706311AC79EF400E47931 /* Images.xcassets */; };
 		5C4706351AC79EF400E47931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706331AC79EF400E47931 /* Main.storyboard */; };
 		5C4706411AC79EF400E47931 /* JeevesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4706401AC79EF400E47931 /* JeevesTests.swift */; };
+		5C4706B71AC7AB7E00E47931 /* JeevesKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C4706B61AC7AB7E00E47931 /* JeevesKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C4706BD1AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; };
+		5C4706C61AC7AB7E00E47931 /* JeevesKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */; };
+		5C4706C91AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; };
+		5C4706CA1AC7AB7E00E47931 /* JeevesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C4706D41AC7ABBA00E47931 /* GCDWebServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */; };
+		5C4706D91AC7AC0600E47931 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706D71AC7AC0600E47931 /* Argo.framework */; };
+		5C4706DA1AC7AC0600E47931 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4706D81AC7AC0600E47931 /* Runes.framework */; };
+		5C4706DC1AC7AC4800E47931 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4706DB1AC7AC4800E47931 /* Server.swift */; };
+		5C4C41FB1AC7AE0E00E51068 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D71AC7AC0600E47931 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C4C41FC1AC7AE1A00E51068 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D81AC7AC0600E47931 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C4C41FD1AC7AE3500E51068 /* GCDWebServer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,7 +34,54 @@
 			remoteGlobalIDString = 5C4706271AC79EF400E47931;
 			remoteInfo = Jeeves;
 		};
+		5C4706BE1AC7AB7E00E47931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4706201AC79EF400E47931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4706B11AC7AB7E00E47931;
+			remoteInfo = JeevesKit;
+		};
+		5C4706C01AC7AB7E00E47931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4706201AC79EF400E47931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4706271AC79EF400E47931;
+			remoteInfo = Jeeves;
+		};
+		5C4706C71AC7AB7E00E47931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4706201AC79EF400E47931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4706B11AC7AB7E00E47931;
+			remoteInfo = JeevesKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C4706A91AC7AB6B00E47931 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C4706CA1AC7AB7E00E47931 /* JeevesKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4C41FA1AC7ADFF00E51068 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C4C41FD1AC7AE3500E51068 /* GCDWebServer.framework in CopyFiles */,
+				5C4C41FC1AC7AE1A00E51068 /* Runes.framework in CopyFiles */,
+				5C4C41FB1AC7AE0E00E51068 /* Argo.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5C4706281AC79EF400E47931 /* Jeeves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeeves.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +93,18 @@
 		5C47063A1AC79EF400E47931 /* JeevesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeevesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C47063F1AC79EF400E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4706401AC79EF400E47931 /* JeevesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeevesTests.swift; sourceTree = "<group>"; };
+		5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JeevesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4706B51AC7AB7E00E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4706B61AC7AB7E00E47931 /* JeevesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JeevesKit.h; sourceTree = "<group>"; };
+		5C4706BC1AC7AB7E00E47931 /* JeevesKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeevesKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4706C41AC7AB7E00E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeevesKitTests.swift; sourceTree = "<group>"; };
+		5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServer.framework; path = Carthage/Build/Mac/GCDWebServer.framework; sourceTree = "<group>"; };
+		5C4706D21AC7ABBA00E47931 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		5C4706D31AC7ABBA00E47931 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		5C4706D71AC7AC0600E47931 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
+		5C4706D81AC7AC0600E47931 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
+		5C4706DB1AC7AC4800E47931 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4706C91AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +120,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706AE1AC7AB7E00E47931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706D91AC7AC0600E47931 /* Argo.framework in Frameworks */,
+				5C4706DA1AC7AC0600E47931 /* Runes.framework in Frameworks */,
+				5C4706D41AC7ABBA00E47931 /* GCDWebServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706B91AC7AB7E00E47931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706BD1AC7AB7E00E47931 /* JeevesKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +149,10 @@
 			children = (
 				5C47062A1AC79EF400E47931 /* Jeeves */,
 				5C47063D1AC79EF400E47931 /* JeevesTests */,
+				5C4706B31AC7AB7E00E47931 /* JeevesKit */,
+				5C4706C21AC7AB7E00E47931 /* JeevesKitTests */,
 				5C4706291AC79EF400E47931 /* Products */,
+				5C4706DD1AC7AC6C00E47931 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +161,8 @@
 			children = (
 				5C4706281AC79EF400E47931 /* Jeeves.app */,
 				5C47063A1AC79EF400E47931 /* JeevesTests.xctest */,
+				5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */,
+				5C4706BC1AC7AB7E00E47931 /* JeevesKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +204,65 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5C4706B31AC7AB7E00E47931 /* JeevesKit */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706B61AC7AB7E00E47931 /* JeevesKit.h */,
+				5C4706B41AC7AB7E00E47931 /* Supporting Files */,
+				5C4706DB1AC7AC4800E47931 /* Server.swift */,
+			);
+			path = JeevesKit;
+			sourceTree = "<group>";
+		};
+		5C4706B41AC7AB7E00E47931 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706B51AC7AB7E00E47931 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C4706C21AC7AB7E00E47931 /* JeevesKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706C51AC7AB7E00E47931 /* JeevesKitTests.swift */,
+				5C4706C31AC7AB7E00E47931 /* Supporting Files */,
+			);
+			path = JeevesKitTests;
+			sourceTree = "<group>";
+		};
+		5C4706C31AC7AB7E00E47931 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706C41AC7AB7E00E47931 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C4706DD1AC7AC6C00E47931 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706D71AC7AC0600E47931 /* Argo.framework */,
+				5C4706D81AC7AC0600E47931 /* Runes.framework */,
+				5C4706D11AC7ABBA00E47931 /* GCDWebServer.framework */,
+				5C4706D21AC7ABBA00E47931 /* Nimble.framework */,
+				5C4706D31AC7ABBA00E47931 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5C4706AF1AC7AB7E00E47931 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706B71AC7AB7E00E47931 /* JeevesKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		5C4706271AC79EF400E47931 /* Jeeves */ = {
@@ -119,10 +272,12 @@
 				5C4706241AC79EF400E47931 /* Sources */,
 				5C4706251AC79EF400E47931 /* Frameworks */,
 				5C4706261AC79EF400E47931 /* Resources */,
+				5C4706A91AC7AB6B00E47931 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5C4706C81AC7AB7E00E47931 /* PBXTargetDependency */,
 			);
 			name = Jeeves;
 			productName = Jeeves;
@@ -147,6 +302,44 @@
 			productReference = 5C47063A1AC79EF400E47931 /* JeevesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5C4706B11AC7AB7E00E47931 /* JeevesKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4706CB1AC7AB7E00E47931 /* Build configuration list for PBXNativeTarget "JeevesKit" */;
+			buildPhases = (
+				5C4706AD1AC7AB7E00E47931 /* Sources */,
+				5C4706AE1AC7AB7E00E47931 /* Frameworks */,
+				5C4706AF1AC7AB7E00E47931 /* Headers */,
+				5C4706B01AC7AB7E00E47931 /* Resources */,
+				5C4C41FA1AC7ADFF00E51068 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JeevesKit;
+			productName = JeevesKit;
+			productReference = 5C4706B21AC7AB7E00E47931 /* JeevesKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5C4706BB1AC7AB7E00E47931 /* JeevesKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4706CE1AC7AB7E00E47931 /* Build configuration list for PBXNativeTarget "JeevesKitTests" */;
+			buildPhases = (
+				5C4706B81AC7AB7E00E47931 /* Sources */,
+				5C4706B91AC7AB7E00E47931 /* Frameworks */,
+				5C4706BA1AC7AB7E00E47931 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C4706BF1AC7AB7E00E47931 /* PBXTargetDependency */,
+				5C4706C11AC7AB7E00E47931 /* PBXTargetDependency */,
+			);
+			name = JeevesKitTests;
+			productName = JeevesKitTests;
+			productReference = 5C4706BC1AC7AB7E00E47931 /* JeevesKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,8 +351,17 @@
 				TargetAttributes = {
 					5C4706271AC79EF400E47931 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5KE88HWMKJ;
 					};
 					5C4706391AC79EF400E47931 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 5C4706271AC79EF400E47931;
+					};
+					5C4706B11AC7AB7E00E47931 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5KE88HWMKJ;
+					};
+					5C4706BB1AC7AB7E00E47931 = {
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 5C4706271AC79EF400E47931;
 					};
@@ -180,6 +382,8 @@
 			targets = (
 				5C4706271AC79EF400E47931 /* Jeeves */,
 				5C4706391AC79EF400E47931 /* JeevesTests */,
+				5C4706B11AC7AB7E00E47931 /* JeevesKit */,
+				5C4706BB1AC7AB7E00E47931 /* JeevesKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,6 +399,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5C4706381AC79EF400E47931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706B01AC7AB7E00E47931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706BA1AC7AB7E00E47931 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,6 +439,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C4706AD1AC7AB7E00E47931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706DC1AC7AC4800E47931 /* Server.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706B81AC7AB7E00E47931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706C61AC7AB7E00E47931 /* JeevesKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,6 +462,21 @@
 			isa = PBXTargetDependency;
 			target = 5C4706271AC79EF400E47931 /* Jeeves */;
 			targetProxy = 5C47063B1AC79EF400E47931 /* PBXContainerItemProxy */;
+		};
+		5C4706BF1AC7AB7E00E47931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4706B11AC7AB7E00E47931 /* JeevesKit */;
+			targetProxy = 5C4706BE1AC7AB7E00E47931 /* PBXContainerItemProxy */;
+		};
+		5C4706C11AC7AB7E00E47931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4706271AC79EF400E47931 /* Jeeves */;
+			targetProxy = 5C4706C01AC7AB7E00E47931 /* PBXContainerItemProxy */;
+		};
+		5C4706C81AC7AB7E00E47931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4706B11AC7AB7E00E47931 /* JeevesKit */;
+			targetProxy = 5C4706C71AC7AB7E00E47931 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -327,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Jeeves/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -338,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Jeeves/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -381,6 +632,99 @@
 			};
 			name = Release;
 		};
+		5C4706CC1AC7AB7E00E47931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JeevesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5C4706CD1AC7AB7E00E47931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = JeevesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5C4706CF1AC7AB7E00E47931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JeevesKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeeves.app/Contents/MacOS/Jeeves";
+			};
+			name = Debug;
+		};
+		5C4706D01AC7AB7E00E47931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JeevesKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeeves.app/Contents/MacOS/Jeeves";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +744,7 @@
 				5C4706461AC79EF400E47931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C4706471AC79EF400E47931 /* Build configuration list for PBXNativeTarget "JeevesTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +753,25 @@
 				5C4706491AC79EF400E47931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C4706CB1AC7AB7E00E47931 /* Build configuration list for PBXNativeTarget "JeevesKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4706CC1AC7AB7E00E47931 /* Debug */,
+				5C4706CD1AC7AB7E00E47931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C4706CE1AC7AB7E00E47931 /* Build configuration list for PBXNativeTarget "JeevesKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4706CF1AC7AB7E00E47931 /* Debug */,
+				5C4706D01AC7AB7E00E47931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,3 +1,2 @@
-github "swisspol/GCDWebServer"
-github "quick/nimble"
-github "quick/quick"
+github "swisspol/GCDWebServer" "master"
+github "thoughtbot/Argo"
