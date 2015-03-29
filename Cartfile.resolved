@@ -1,0 +1,3 @@
+github "swisspol/GCDWebServer" "3.2.2"
+github "quick/nimble" "v0.4.1"
+github "quick/quick" "v0.3.0"
