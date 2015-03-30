@@ -1,5 +1,5 @@
 //
-//  Resolver.swift
+//  JeevesKit.swift
 //  Jeeves
 //
 //  Created by Sash Zats on 3/28/15.
@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Argo
+import Runes
 
 // MARK: - Types
 
@@ -41,9 +43,101 @@ public struct Route {
     public let method: RequestMethod
     public let requestPath: String
     public let responseFileURL: NSURL
+    
+    public init(method: RequestMethod = .GET, requestPath: String, responseFileURL: NSURL) {
+        self.method = method
+        self.requestPath = requestPath
+        self.responseFileURL = responseFileURL
+    }
 }
 
-// MARK: - Request Matchers
+public struct RoutesCollection {
+    let routes: [Route]
+    
+    init(routes: [Route]) {
+        self.routes = routes
+    }
+    
+    init?(jsonObject: AnyObject) {
+        let j = JSONValue.parse(jsonObject)
+        if let instance = RoutesCollection.decode(j) {
+            self = instance
+        } else {
+            return nil
+        }
+    }
+}
+
+// MARK: - JSONDecodable
+
+extension NSURL: JSONDecodable {
+    public static func decode(j: JSONValue) -> NSURL? {
+        switch j {
+        case let .JSONString(s): return NSURL(fileURLWithPath: s)
+        default: return nil
+        }
+    }
+}
+
+extension RequestMethod: JSONDecodable {
+    public static func decode(j: JSONValue) -> RequestMethod? {
+        switch j {
+        case let .JSONString(s): return RequestMethod(rawValue: s)
+        default: return nil
+        }
+    }
+}
+
+extension Route: JSONDecodable {
+    internal static func create(method: RequestMethod = .GET)(requestPath: String)(responseFileURL: NSURL) -> Route {
+        return Route(method: method, requestPath: requestPath, responseFileURL: responseFileURL)
+    }
+    
+    public static func decode(j: JSONValue) -> Route? {
+        return Route.create
+            <^> j <| "method"
+            <*> j <| "path"
+            <*> j <| "resource"
+    }
+}
+
+extension RoutesCollection: JSONDecodable {
+    internal static func create(routes: [Route]) -> RoutesCollection {
+        return RoutesCollection(routes: routes)
+    }
+    
+    public static func decode(j: JSONValue) -> RoutesCollection? {
+        return RoutesCollection.create
+            <^> j <|| "routes"
+    }
+}
+
+/*
+extension Route {
+    func isMatching(request: Request) -> Bool {
+        return self.isStrictlyMatching(request) || self.isMatchingAsRegex(request)
+    }
+    
+    func isStrictlyMatching(request: Request) -> Bool {
+        return self.method == request.method && self.requestPath == request.URL.path!
+    }
+    
+    func isMatchingAsRegex(request: Request) -> Bool {
+        if let regex = NSRegularExpression(pattern: self.path, options: NSRegularExpressionOptions.CaseInsensitive, error: nil) {
+            if let path = request.URL.path {
+                return regex.numberOfMatchesInString(path, options: .Anchored, range: NSMakeRange(0, (path as NSString).length)) > 0
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+        
+    }
+}
+*/
+
+// MARK: - RequestMatcher
 
 public protocol RequestMatcher {
     func match(#request: Request, resolver: URLResolver) -> RequestMatcherResult
@@ -72,6 +166,9 @@ public func | (lhs: RequestMatcherResult, rhs: RequestMatcherResult) -> RequestM
 }
 
 public struct DirectRequestMatcher: RequestMatcher {
+    public init() {
+    }
+    
     public func match(#request: Request, resolver: URLResolver) -> RequestMatcherResult {
         if resolver.isFileExist(request.URL) {
             return RequestMatcherResult.Yes(matchedURL: request.URL)
@@ -81,6 +178,9 @@ public struct DirectRequestMatcher: RequestMatcher {
 }
 
 public struct IndexRequestMatcher: RequestMatcher {
+    public init() {
+    }
+    
     public func match(#request: Request, resolver: URLResolver) -> RequestMatcherResult {
         if request.URL.pathExtension == nil || request.URL.pathExtension! == "" {
             let indexURL = request.URL.URLByAppendingPathComponent("index.html")
@@ -94,6 +194,10 @@ public struct IndexRequestMatcher: RequestMatcher {
 
 public struct RouteRequestMatcher: RequestMatcher {
     public let route: Route
+    
+    public init(route: Route) {
+        self.route = route
+    }
 
     public func match(#request: Request, resolver: URLResolver) -> RequestMatcherResult {
         if request.method == route.method {
@@ -112,10 +216,14 @@ public struct RouteRequestMatcher: RequestMatcher {
 }
 
 public struct RouteCollectionRequestMatcher: RequestMatcher {
-    public let routeCollection: [Route]
+    public let routes: [Route]
+    
+    public init(routes: [Route]) {
+        self.routes = routes
+    }
     
     public func match(#request: Request, resolver: URLResolver) -> RequestMatcherResult {
-        for route in self.routeCollection {
+        for route in self.routes {
             let matcher = RouteRequestMatcher(route: route)
             let result = matcher.match(request: request, resolver: resolver)
             if result {
@@ -126,11 +234,16 @@ public struct RouteCollectionRequestMatcher: RequestMatcher {
     }
 }
 
-// MARK: - Request Mapper
+// MARK: - RequestMapper
 
 public struct RequestMapper {
     let matchers: [RequestMatcher]
     let resolver: URLResolver
+    
+    public init(matchers: [RequestMatcher], resolver: URLResolver) {
+        self.matchers = matchers
+        self.resolver = resolver
+    }
 
     public func map(#request: Request) -> Response {
         for matcher in self.matchers {
@@ -145,14 +258,34 @@ public struct RequestMapper {
     }
 }
 
-// MARK: - Resolvers
+// MARK: - URLResolver
 
 public protocol URLResolver {
+    init()
     func isFileExist(fileURL: NSURL) -> Bool;
 }
 
-public class LocalURLResolver: URLResolver {
+public struct LocalURLResolver: URLResolver {
+    public init() {
+    }
+    
     public func isFileExist(fileURL: NSURL) -> Bool {
         return fileURL.checkPromisedItemIsReachableAndReturnError(nil)
+    }
+}
+
+// MARK: - Server
+
+public class Server {
+    public init() {
+        
+    }
+    
+    public func start(#rootFileURL: NSURL) {
+        
+    }
+    
+    public func stop() {
+        
     }
 }
