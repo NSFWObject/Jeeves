@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C40B9CF1AD2EA5E00BC8932 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C40B9CD1AD2EA5E00BC8932 /* Crashlytics.framework */; };
+		5C40B9D01AD2EA5E00BC8932 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C40B9CE1AD2EA5E00BC8932 /* Fabric.framework */; };
 		5C47062E1AC79EF400E47931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47062D1AC79EF400E47931 /* AppDelegate.swift */; };
 		5C4706321AC79EF400E47931 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706311AC79EF400E47931 /* Images.xcassets */; };
 		5C4706351AC79EF400E47931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706331AC79EF400E47931 /* Main.storyboard */; };
 		5C8D657D1AD1E953003546D2 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D657C1AD1E953003546D2 /* Server.swift */; };
-		5C8D65811AD220B4003546D2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8D657F1AD220B4003546D2 /* Crashlytics.framework */; };
-		5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8D65801AD220B4003546D2 /* Fabric.framework */; };
 		5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; };
 		5C901B641AD1CA5600CA7F54 /* GCDWebServerOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -53,6 +53,8 @@
 /* Begin PBXFileReference section */
 		5C0574D21AC7CF55006C63D9 /* JeevesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JeevesTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		5C0574D71AC863F5006C63D9 /* Jeeves.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Jeeves.entitlements; sourceTree = "<group>"; };
+		5C40B9CD1AD2EA5E00BC8932 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		5C40B9CE1AD2EA5E00BC8932 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5C4706281AC79EF400E47931 /* Jeeves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeeves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C47062C1AC79EF400E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C47062D1AC79EF400E47931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +63,6 @@
 		5C47063A1AC79EF400E47931 /* JeevesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeevesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C47063F1AC79EF400E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C8D657C1AD1E953003546D2 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		5C8D657F1AD220B4003546D2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		5C8D65801AD220B4003546D2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServerOSX.framework; path = Carthage/Build/Mac/GCDWebServerOSX.framework; sourceTree = "<group>"; };
 		5CCCC1221AD0AD71006EECDB /* Jeeves.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Jeeves.playground; sourceTree = "<group>"; };
 		5CFB6D921AD0FDCD009DD6F8 /* Jeeves-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jeeves-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -73,9 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */,
-				5C8D65811AD220B4003546D2 /* Crashlytics.framework in Frameworks */,
+				5C40B9CF1AD2EA5E00BC8932 /* Crashlytics.framework in Frameworks */,
 				5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */,
+				5C40B9D01AD2EA5E00BC8932 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,8 +159,8 @@
 		5C4706DD1AC7AC6C00E47931 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C8D657F1AD220B4003546D2 /* Crashlytics.framework */,
-				5C8D65801AD220B4003546D2 /* Fabric.framework */,
+				5C40B9CD1AD2EA5E00BC8932 /* Crashlytics.framework */,
+				5C40B9CE1AD2EA5E00BC8932 /* Fabric.framework */,
 				5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */,
 			);
 			name = Frameworks;
