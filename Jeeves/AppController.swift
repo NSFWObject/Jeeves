@@ -8,7 +8,7 @@
 //
 
 import Cocoa
-import JeevesKit
+
 
 class AppController: NSObject, MenuManagerDelegate {
     private let recentsManager: RecentsManager
@@ -27,7 +27,7 @@ class AppController: NSObject, MenuManagerDelegate {
     
     func checkForInitialHotkey() {
         let flags = NSEvent.modifierFlags() & NSEventModifierFlags.DeviceIndependentModifierFlagsMask
-        let resetFlags = NSEventModifierFlags.AlternateKeyMask | NSEventModifierFlags.ShiftKeyMask
+        let resetFlags: NSEventModifierFlags = .AlternateKeyMask | .ShiftKeyMask
         if flags == resetFlags {
             self.reset()
         }
@@ -40,14 +40,25 @@ class AppController: NSObject, MenuManagerDelegate {
     }
 
     private func setupServer(rootURL: NSURL) {
+        self.menuManager.selectedURL = nil
         if let server = self.serverManager {
             server.stop()
         }
-        let server = Server()
-        server.start(rootFileURL: rootURL)
+        
+        let resolver = LocalURLResolver()
+        let server = Server(rootURL: rootURL, resolver: resolver)
+        var error: NSError?
+        if !server.start(&error) {
+            let alert = NSAlert(error: error!)
+            alert.runModal()
+            return
+        }
+        if let url = server.serverURL {
+            NSWorkspace.sharedWorkspace().openURL(url)
+        }
+        self.menuManager.selectedURL = rootURL
         self.serverManager = server
     }
-
 
     private func showOpenFolder() {
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
@@ -61,10 +72,9 @@ class AppController: NSObject, MenuManagerDelegate {
         panel.canCreateDirectories = false
         panel.canChooseFiles = false
         panel.hidesOnDeactivate = false
-        panel.beginWithCompletionHandler({ (result) -> Void in
+        panel.beginWithCompletionHandler({ result in
             if result == NSFileHandlingPanelOKButton {
-                var recents = RecentsManager()
-                recents.add(panel.URL!)
+                self.recentsManager.add(panel.URL!)
                 self.setupServer(panel.URL!)
             }
         })

@@ -11,12 +11,29 @@ import Cocoa
 
 public class MenuManager: NSObject, NSMenuDelegate {
     
-    static public let SampleServerURL = NSBundle.mainBundle().URLForResource("Server Sample", withExtension: "")!
-    
-    private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    static public let SampleServerURL = NSBundle.mainBundle().URLForResource("Sample", withExtension: "")!
     
     public weak var delegate: MenuManagerDelegate?
+    public var selectedURL: NSURL? = nil{
+        didSet {
+            if let url = self.selectedURL {
+                self.statusItem.toolTip = "Jeeves is serving \"\(url.lastPathComponent!)\""
+                self.enabled = true
+            } else {
+                self.statusItem.toolTip = "Jeeves is resting"
+                self.enabled = false
+            }
+
+        }
+    }
     
+    private var enabled: Bool = false {
+        didSet {
+            self.statusItem.image = NSImage(named: self.enabled ? "StatusItem-On" : "StatusItem")
+        }
+    }
+    
+    private let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     private let recentsManager: RecentsManager
     
     public init(recentsManager: RecentsManager) {
@@ -25,14 +42,14 @@ public class MenuManager: NSObject, NSMenuDelegate {
         self.setupMenuItem()
     }
     
+    // MARK: - Private
+    
     private func setupMenuItem() {
         statusItem.image = NSImage(named:"StatusItem")
         let menu = NSMenu()
         menu.delegate = self
         statusItem.menu = menu
     }
-    
-    // MARK: - Private
     
     private func rebuildMenu(menu: NSMenu) {
         menu.removeAllItems()
@@ -54,7 +71,7 @@ public class MenuManager: NSObject, NSMenuDelegate {
             if self != nil {
                 self!.delegate?.menuManagerDidSelectQuit(self!)
             }
-            }, keyEquivalent: ""))
+        }, keyEquivalent: ""))
     }
     
     private func addRecentLocations(menu: NSMenu) {
@@ -62,12 +79,15 @@ public class MenuManager: NSObject, NSMenuDelegate {
         menu.addItemWithTitle("Recent Servers", action: nil, keyEquivalent: "")
 
         if self.recentsManager.locations.count > 0 {
-            for recentURL in self.recentsManager.locations {
+            for (index, recentURL) in enumerate(self.recentsManager.locations) {
                 let recent = ClosurableMenuItem(title: recentURL.lastPathComponent!, handler: { [weak self] in
                     if self != nil {
                         self!.delegate?.menuManager(self!, didSelectRecentWithURL: recentURL)
                     }
-                    }, keyEquivalent: "")
+                    let recentMenuItem = menu.itemArray[index] as! NSMenuItem
+                    recentMenuItem.state = NSOnState
+                }, keyEquivalent: "")
+                recent.state = recentURL == self.selectedURL ? NSOnState : NSOffState
                 menu.addItem(recent)
             }
         }
@@ -77,14 +97,24 @@ public class MenuManager: NSObject, NSMenuDelegate {
             if self != nil {
                 self!.delegate?.menuManager(self!, didSelectRecentWithURL: MenuManager.SampleServerURL)
             }
-            }, keyEquivalent: "")
+        }, keyEquivalent: "")
+        sampleServer.state = self.selectedURL == MenuManager.SampleServerURL ? NSOnState : NSOffState
         menu.addItem(sampleServer)
     }
     
     // MARK: - NSMenuDelegate
     
     public func menuWillOpen(_: NSMenu) {
+        self.statusItem.image?.setTemplate(true)
         rebuildMenu(self.statusItem.menu!)
+    }
+    
+    public func menuDidClose(menu: NSMenu) {
+        if self.enabled {
+            self.statusItem.image?.setTemplate(false)
+        } else {
+            self.statusItem.image?.setTemplate(true)
+        }
     }
 }
 
