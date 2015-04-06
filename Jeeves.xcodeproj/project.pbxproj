@@ -15,6 +15,9 @@
 		5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8D65801AD220B4003546D2 /* Fabric.framework */; };
 		5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; };
 		5C901B641AD1CA5600CA7F54 /* GCDWebServerOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5CA08A531AD2DB850038AEE4 /* ServerConfigurationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA08A521AD2DB850038AEE4 /* ServerConfigurationObserver.swift */; };
+		5CA08A561AD2DCE00038AEE4 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA08A541AD2DCE00038AEE4 /* Argo.framework */; };
+		5CA08A571AD2DCE00038AEE4 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CA08A551AD2DCE00038AEE4 /* Runes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		5C8D657F1AD220B4003546D2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5C8D65801AD220B4003546D2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServerOSX.framework; path = Carthage/Build/Mac/GCDWebServerOSX.framework; sourceTree = "<group>"; };
+		5CA08A521AD2DB850038AEE4 /* ServerConfigurationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConfigurationObserver.swift; sourceTree = "<group>"; };
+		5CA08A541AD2DCE00038AEE4 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
+		5CA08A551AD2DCE00038AEE4 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		5CCCC1221AD0AD71006EECDB /* Jeeves.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Jeeves.playground; sourceTree = "<group>"; };
 		5CFB6D921AD0FDCD009DD6F8 /* Jeeves-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jeeves-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +82,8 @@
 				5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */,
 				5C8D65811AD220B4003546D2 /* Crashlytics.framework in Frameworks */,
 				5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */,
+				5CA08A571AD2DCE00038AEE4 /* Runes.framework in Frameworks */,
+				5CA08A561AD2DCE00038AEE4 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,7 @@
 			children = (
 				5C47062D1AC79EF400E47931 /* AppDelegate.swift */,
 				5C8D657C1AD1E953003546D2 /* Server.swift */,
+				5CA08A521AD2DB850038AEE4 /* ServerConfigurationObserver.swift */,
 				5C0574D81AC8640D006C63D9 /* Resources */,
 				5C47062B1AC79EF400E47931 /* Supporting Files */,
 			);
@@ -159,6 +168,8 @@
 		5C4706DD1AC7AC6C00E47931 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CA08A541AD2DCE00038AEE4 /* Argo.framework */,
+				5CA08A551AD2DCE00038AEE4 /* Runes.framework */,
 				5C8D657F1AD220B4003546D2 /* Crashlytics.framework */,
 				5C8D65801AD220B4003546D2 /* Fabric.framework */,
 				5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */,
@@ -292,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8D657D1AD1E953003546D2 /* Server.swift in Sources */,
+				5CA08A531AD2DB850038AEE4 /* ServerConfigurationObserver.swift in Sources */,
 				5C47062E1AC79EF400E47931 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

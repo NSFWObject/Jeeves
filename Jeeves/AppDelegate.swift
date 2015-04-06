@@ -75,6 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - NSApplicationDelegate
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        Crashlytics.sharedInstance().debugMode = true
         Fabric.with([Crashlytics()])
     }
     
