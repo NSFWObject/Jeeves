@@ -1,0 +1,13 @@
+[submodule "Carthage/Checkouts/GCDWebServer"]
+	path = Carthage/Checkouts/GCDWebServer
+	url = https://github.com/swisspol/GCDWebServer.git
+[submodule "Carthage/Checkouts/quick"]
+	path = Carthage/Checkouts/quick
+	url = https://github.com/quick/quick.git
+[submodule "Carthage/Checkouts/nimble"]
+	path = Carthage/Checkouts/nimble
+	url = https://github.com/quick/nimble.git
+[submodule "Carthage/Checkouts/Quick"]
+	url = https://github.com/Quick/Quick.git
+[submodule "Carthage/Checkouts/Nimble"]
+	url = https://github.com/Quick/Nimble.git

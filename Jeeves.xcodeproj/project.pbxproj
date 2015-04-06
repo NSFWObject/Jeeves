@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C47062E1AC79EF400E47931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C47062D1AC79EF400E47931 /* AppDelegate.swift */; };
+		5C4706321AC79EF400E47931 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706311AC79EF400E47931 /* Images.xcassets */; };
+		5C4706351AC79EF400E47931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4706331AC79EF400E47931 /* Main.storyboard */; };
+		5C8D657D1AD1E953003546D2 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8D657C1AD1E953003546D2 /* Server.swift */; };
+		5C8D65811AD220B4003546D2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8D657F1AD220B4003546D2 /* Crashlytics.framework */; };
+		5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8D65801AD220B4003546D2 /* Fabric.framework */; };
+		5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; };
+		5C901B641AD1CA5600CA7F54 /* GCDWebServerOSX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C47063B1AC79EF400E47931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4706201AC79EF400E47931 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4706271AC79EF400E47931;
+			remoteInfo = Jeeves;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C42C9771ACC486000009CD2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706A91AC7AB6B00E47931 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5C901B641AD1CA5600CA7F54 /* GCDWebServerOSX.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5C0574D21AC7CF55006C63D9 /* JeevesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JeevesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C0574D71AC863F5006C63D9 /* Jeeves.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Jeeves.entitlements; sourceTree = "<group>"; };
+		5C4706281AC79EF400E47931 /* Jeeves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeeves.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C47062C1AC79EF400E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C47062D1AC79EF400E47931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C4706311AC79EF400E47931 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5C4706341AC79EF400E47931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C47063A1AC79EF400E47931 /* JeevesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeevesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C47063F1AC79EF400E47931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C8D657C1AD1E953003546D2 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		5C8D657F1AD220B4003546D2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		5C8D65801AD220B4003546D2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServerOSX.framework; path = Carthage/Build/Mac/GCDWebServerOSX.framework; sourceTree = "<group>"; };
+		5CCCC1221AD0AD71006EECDB /* Jeeves.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Jeeves.playground; sourceTree = "<group>"; };
+		5CFB6D921AD0FDCD009DD6F8 /* Jeeves-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jeeves-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C4706251AC79EF400E47931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C8D65821AD220B4003546D2 /* Fabric.framework in Frameworks */,
+				5C8D65811AD220B4003546D2 /* Crashlytics.framework in Frameworks */,
+				5C901B631AD1CA5000CA7F54 /* GCDWebServerOSX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706371AC79EF400E47931 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C0574D81AC8640D006C63D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706311AC79EF400E47931 /* Images.xcassets */,
+				5C4706331AC79EF400E47931 /* Main.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5C47061F1AC79EF400E47931 = {
+			isa = PBXGroup;
+			children = (
+				5C47062A1AC79EF400E47931 /* Jeeves */,
+				5C47063D1AC79EF400E47931 /* JeevesTests */,
+				5C4706291AC79EF400E47931 /* Products */,
+				5C4706DD1AC7AC6C00E47931 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C4706291AC79EF400E47931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C4706281AC79EF400E47931 /* Jeeves.app */,
+				5C47063A1AC79EF400E47931 /* JeevesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C47062A1AC79EF400E47931 /* Jeeves */ = {
+			isa = PBXGroup;
+			children = (
+				5C47062D1AC79EF400E47931 /* AppDelegate.swift */,
+				5C8D657C1AD1E953003546D2 /* Server.swift */,
+				5C0574D81AC8640D006C63D9 /* Resources */,
+				5C47062B1AC79EF400E47931 /* Supporting Files */,
+			);
+			path = Jeeves;
+			sourceTree = "<group>";
+		};
+		5C47062B1AC79EF400E47931 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C0574D71AC863F5006C63D9 /* Jeeves.entitlements */,
+				5C47062C1AC79EF400E47931 /* Info.plist */,
+				5CCCC1221AD0AD71006EECDB /* Jeeves.playground */,
+				5CFB6D921AD0FDCD009DD6F8 /* Jeeves-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C47063D1AC79EF400E47931 /* JeevesTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C47063E1AC79EF400E47931 /* Supporting Files */,
+			);
+			path = JeevesTests;
+			sourceTree = "<group>";
+		};
+		5C47063E1AC79EF400E47931 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C0574D21AC7CF55006C63D9 /* JeevesTests-Bridging-Header.h */,
+				5C47063F1AC79EF400E47931 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C4706DD1AC7AC6C00E47931 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C8D657F1AD220B4003546D2 /* Crashlytics.framework */,
+				5C8D65801AD220B4003546D2 /* Fabric.framework */,
+				5C901B621AD1CA5000CA7F54 /* GCDWebServerOSX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C4706271AC79EF400E47931 /* Jeeves */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4706441AC79EF400E47931 /* Build configuration list for PBXNativeTarget "Jeeves" */;
+			buildPhases = (
+				5C4706241AC79EF400E47931 /* Sources */,
+				5C4706251AC79EF400E47931 /* Frameworks */,
+				5C4706261AC79EF400E47931 /* Resources */,
+				5C4706A91AC7AB6B00E47931 /* Embed Frameworks */,
+				5C8D657E1AD2207A003546D2 /* Crashlytics */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jeeves;
+			productName = Jeeves;
+			productReference = 5C4706281AC79EF400E47931 /* Jeeves.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C4706391AC79EF400E47931 /* JeevesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C4706471AC79EF400E47931 /* Build configuration list for PBXNativeTarget "JeevesTests" */;
+			buildPhases = (
+				5C4706361AC79EF400E47931 /* Sources */,
+				5C4706371AC79EF400E47931 /* Frameworks */,
+				5C4706381AC79EF400E47931 /* Resources */,
+				5C42C9771ACC486000009CD2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C47063C1AC79EF400E47931 /* PBXTargetDependency */,
+			);
+			name = JeevesTests;
+			productName = JeevesTests;
+			productReference = 5C47063A1AC79EF400E47931 /* JeevesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C4706201AC79EF400E47931 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Sash Zats";
+				TargetAttributes = {
+					5C4706271AC79EF400E47931 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 5KE88HWMKJ;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					5C4706391AC79EF400E47931 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 5C4706271AC79EF400E47931;
+					};
+				};
+			};
+			buildConfigurationList = 5C4706231AC79EF400E47931 /* Build configuration list for PBXProject "Jeeves" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C47061F1AC79EF400E47931;
+			productRefGroup = 5C4706291AC79EF400E47931 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C4706271AC79EF400E47931 /* Jeeves */,
+				5C4706391AC79EF400E47931 /* JeevesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C4706261AC79EF400E47931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C4706321AC79EF400E47931 /* Images.xcassets in Resources */,
+				5C4706351AC79EF400E47931 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706381AC79EF400E47931 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C8D657E1AD2207A003546D2 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 1806f0e415eca8782897d8254a1363122c77c03a 2b5acc049504c1077095f7bd52b60173f9130607ded96d551c1c56e40ba0205f";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C4706241AC79EF400E47931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C8D657D1AD1E953003546D2 /* Server.swift in Sources */,
+				5C47062E1AC79EF400E47931 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C4706361AC79EF400E47931 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C47063C1AC79EF400E47931 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4706271AC79EF400E47931 /* Jeeves */;
+			targetProxy = 5C47063B1AC79EF400E47931 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C4706331AC79EF400E47931 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C4706341AC79EF400E47931 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C4706421AC79EF400E47931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C4706431AC79EF400E47931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5C4706451AC79EF400E47931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jeeves/Jeeves.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = Jeeves/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PRODUCT_NAME}/${TARGET_NAME}-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		5C4706461AC79EF400E47931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jeeves/Jeeves.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = Jeeves/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PRODUCT_NAME}/${TARGET_NAME}-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		5C4706481AC79EF400E47931 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JeevesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JeevesTests/JeevesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeeves.app/Contents/MacOS/Jeeves";
+			};
+			name = Debug;
+		};
+		5C4706491AC79EF400E47931 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = JeevesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JeevesTests/JeevesTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jeeves.app/Contents/MacOS/Jeeves";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C4706231AC79EF400E47931 /* Build configuration list for PBXProject "Jeeves" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4706421AC79EF400E47931 /* Debug */,
+				5C4706431AC79EF400E47931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C4706441AC79EF400E47931 /* Build configuration list for PBXNativeTarget "Jeeves" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4706451AC79EF400E47931 /* Debug */,
+				5C4706461AC79EF400E47931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C4706471AC79EF400E47931 /* Build configuration list for PBXNativeTarget "JeevesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C4706481AC79EF400E47931 /* Debug */,
+				5C4706491AC79EF400E47931 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C4706201AC79EF400E47931 /* Project object */;
+}

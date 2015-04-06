@@ -1,0 +1,5 @@
+github "swisspol/GCDWebServer" "047fdddb0e775dde72b9f4dd24729faad4c340b1"
+github "Quick/Nimble" "4ecc2f6d3fef1512d6813127969242a702181079"
+github "Quick/Quick" "a57176c053b7b5717f57f72686c35d34251f97fe"
+github "thoughtbot/runes" "v1.2.2"
+github "thoughtbot/Argo" "v0.4.3"
