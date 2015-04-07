@@ -74,13 +74,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - NSApplicationDelegate
 
-    var document: JeevesDocument!
+    var document: ServerConfiguration!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         Fabric.with([Crashlytics()])
         
         let URL = NSBundle.mainBundle().URLForResource("jeeves", withExtension: "json")!
-        self.document = JeevesDocument(fileURL: URL)
+        self.document = ServerConfiguration(folderURL: URL.URLByDeletingLastPathComponent!)
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            self.document = nil
+        }
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {

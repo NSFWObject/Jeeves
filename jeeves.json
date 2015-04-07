@@ -6,7 +6,7 @@
         "pattern": "/hello"
       },
       "response": {
-        "resourceURL": "Documents/file.dat",
+        "resourcePath": "Documents/file.dat",
         "contentType": "text/html"
       }
     }
