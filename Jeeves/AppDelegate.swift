@@ -73,10 +73,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     // MARK: - NSApplicationDelegate
+
+    var document: JeevesDocument!
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        Crashlytics.sharedInstance().debugMode = true
         Fabric.with([Crashlytics()])
+        
+        let URL = NSBundle.mainBundle().URLForResource("jeeves", withExtension: "json")!
+        self.document = JeevesDocument(fileURL: URL)
     }
     
     func applicationWillTerminate(aNotification: NSNotification) {
