@@ -11,47 +11,87 @@ import Runes
 import Argo
 
 
-public struct Route {
+public struct Route: JSONDecodable {
     let request: Request
     let response: Response
+
+    private static func create(request: Request)(response: Response) -> Route {
+        return Route(request: request, response: response)
+    }
+
+    // MARK: JSONDecodable
+    
+    public static func decode(j: JSONValue) -> Route? {
+        return Route.create
+            <^> j <| "request"
+            <*> j <| "response"
+    }
 }
 
-public struct Request {
+public struct Request: JSONDecodable {
     let method: String
     let pattern: String
+
+    private static func create(method: String = "GET")(pattern: String) -> Request {
+        return Request(method: method, pattern: pattern)
+    }
+    
+    // MARK: JSONDecodable
+
+    public static func decode(j: JSONValue) -> Request? {
+        return Request.create
+            <^> j <| "method"
+            <*> j <| "pattern"
+    }
 }
 
-public struct Response {
+public struct Response: JSONDecodable {
     let resourcePath: String
     let contentType: String?
+    
+    private static func create(resourcePath: String)(contentType: String?) -> Response {
+        return Response(resourcePath: resourcePath, contentType: contentType)
+    }
+    
+    // MARK: JSONDecodable
+
+    public static func decode(j: JSONValue) -> Response? {
+        return Response.create
+            <^> j <| "resourcePath"
+            <*> j <| "contentType"
+    }
 }
 
-public class JeevesDocument: NSObject, NSFilePresenter {
-    private var fileURL: NSURL
+public class ServerConfiguration {
+    private let folderURL: NSURL
     private(set) public var routes: [Route]
-    private var coordinator: NSFileCoordinator!
+    private let configurationFileURL: NSURL
+    private var folderObserver: FolderObserver!
     
-    public init(fileURL: NSURL) {
-        self.fileURL = fileURL
+    public init(folderURL: NSURL) {
+        self.folderURL = folderURL
+        self.configurationFileURL = folderURL.URLByAppendingPathComponent("jeeves.json")
         self.routes = []
-        super.init()
         
-        NSFileCoordinator.addFilePresenter(self)
-        self.coordinator = NSFileCoordinator(filePresenter: self)
-        
+        self.folderObserver = FolderObserver(folderURL: folderURL)
+        self.folderObserver.subitemDidChange = { [weak self] (URL) in
+            if URL == self?.configurationFileURL {
+                self?.readWithCoordination()
+            }
+        }
         self.readWithCoordination()
     }
     
     deinit {
-        NSFileCoordinator.removeFilePresenter(self)
+        self.folderObserver.stop()
     }
     
-    // MARK: - Private
-    
+    // MARK: Private
+        
     private func readWithCoordination() {
-        self.coordinator.coordinateReadingItemAtURL(self.fileURL, options: NSFileCoordinatorReadingOptions.WithoutChanges, error: nil) { (url) -> Void in
+        self.folderObserver.readItemCoordinated(self.configurationFileURL) { [weak self] (URL) in
             var routes: [Route] = []
-            if let data = NSData(contentsOfURL: url) {
+            if let data = NSData(contentsOfURL: URL) {
                 if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: nil) as? [String: AnyObject] {
                     if let routesArray = jsonArray["routes"] as? [AnyObject] {
                         for json in routesArray {
@@ -63,84 +103,59 @@ public class JeevesDocument: NSObject, NSFilePresenter {
                     }
                 }
             }
-            self.routes = routes
+            self?.routes = routes
         }
     }
+}
 
-    // MARK: - NSFilePresenter
+
+class FolderObserver: NSObject, NSFilePresenter {
+    private var folderURL: NSURL
+    private var coordinator: NSFileCoordinator!
+    var subitemDidChange: ((URL: NSURL) -> Void)!
     
-    public var presentedItemURL: NSURL? {
-        get {
-            return self.fileURL
-        }
-    }
-
-    static let queue = NSOperationQueue()
-    public var presentedItemOperationQueue: NSOperationQueue {
-        get {
-            return JeevesDocument.queue
-        }
-    }
-
-    public func presentedItemDidChange() {
-        self.readWithCoordination()
+    init(folderURL: NSURL) {
+        self.folderURL = folderURL
+        super.init()
+        NSFileCoordinator.addFilePresenter(self)
+        self.coordinator = NSFileCoordinator(filePresenter: self)
     }
     
-    public func accommodatePresentedItemDeletionWithCompletionHandler(completionHandler: (NSError!) -> Void) {
-        self.routes = []
-        completionHandler(nil)
+    // MARK: Public
+    
+    func stop() {
+        self.coordinator.cancel()
+        // Coordinator retains presenter
+        self.coordinator = nil
         NSFileCoordinator.removeFilePresenter(self)
     }
     
-    public func presentedItemDidMoveToURL(newURL: NSURL) {
-        self.fileURL = newURL
-    }
-}
-
-// MARK: - JSONDecodable
-
-extension Request: JSONDecodable {
-    private static func create(method: String = "GET")(pattern: String) -> Request {
-        return Request(method: method, pattern: pattern)
-    }
-    
-    public static func decode(j: JSONValue) -> Request? {
-        return Request.create
-            <^> j <| "method"
-            <*> j <| "pattern"
-    }
-}
-
-extension Response: JSONDecodable {
-    
-    private static func create(resourcePath: String)(contentType: String?) -> Response {
-        return Response(resourcePath: resourcePath, contentType: contentType)
-    }
-    
-    public static func decode(j: JSONValue) -> Response? {
-        return Response.create
-            <^> j <| "resourcePath"
-            <*> j <| "contentType"
-    }
-}
-
-extension NSURL: JSONDecodable {
-    public static func decode(j: JSONValue) -> NSURL? {
-        switch j {
-            case let .JSONString(s): return NSURL(fileURLWithPath: s)
-            default: return nil
+    func readItemCoordinated(itemURL: NSURL, readerBlock: (URL: NSURL) -> Void) {
+        self.coordinator.coordinateReadingItemAtURL(itemURL, options: NSFileCoordinatorReadingOptions.WithoutChanges, error: nil) { (URL) -> Void in
+            readerBlock(URL: URL)
         }
     }
-}
+    
+    // MARK: - NSFilePresenter
 
-extension Route: JSONDecodable {
-    private static func create(request: Request)(response: Response) -> Route {
-        return Route(request: request, response: response)
+    static let queue = NSOperationQueue()
+    var presentedItemOperationQueue: NSOperationQueue {
+        get {
+            return FolderObserver.queue
+        }
     }
     
-    public static func decode(j: JSONValue) -> Route? {
-        return Route.create
-            <^> j <| "request"
-            <*> j <| "response"
+    var presentedItemURL: NSURL? {
+        get {
+            return self.folderURL
+        }
+    }
+    
+    func presentedSubitemDidAppearAtURL(URL: NSURL) {
+        self.subitemDidChange(URL: URL)
+    }
+    
+    func presentedSubitemDidChangeAtURL(URL: NSURL) {
+        self.subitemDidChange(URL: URL)
     }
 }
