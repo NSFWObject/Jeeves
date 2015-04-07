@@ -18,6 +18,7 @@
 		5CA08A531AD2DB850038AEE4 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA08A521AD2DB850038AEE4 /* Models.swift */; };
 		5CC2CD131AD397B0001A1344 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC2CD111AD397B0001A1344 /* Crashlytics.framework */; };
 		5CC2CD141AD397B0001A1344 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CC2CD121AD397B0001A1344 /* Fabric.framework */; };
+		5CC4C66E1AD3AD1C00CAEB42 /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4C66D1AD3AD1C00CAEB42 /* MenuManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		5CA08A551AD2DCE00038AEE4 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		5CC2CD111AD397B0001A1344 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5CC2CD121AD397B0001A1344 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5CC4C66D1AD3AD1C00CAEB42 /* MenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		5CCCC1221AD0AD71006EECDB /* Jeeves.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Jeeves.playground; sourceTree = "<group>"; };
 		5CFB6D921AD0FDCD009DD6F8 /* Jeeves-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jeeves-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5C47062D1AC79EF400E47931 /* AppDelegate.swift */,
+				5CC4C66D1AD3AD1C00CAEB42 /* MenuManager.swift */,
 				5C8D657C1AD1E953003546D2 /* Server.swift */,
 				5CA08A521AD2DB850038AEE4 /* Models.swift */,
 				5C0574D81AC8640D006C63D9 /* Resources */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C8D657D1AD1E953003546D2 /* Server.swift in Sources */,
+				5CC4C66E1AD3AD1C00CAEB42 /* MenuManager.swift in Sources */,
 				5CA08A531AD2DB850038AEE4 /* Models.swift in Sources */,
 				5C47062E1AC79EF400E47931 /* AppDelegate.swift in Sources */,
 			);
