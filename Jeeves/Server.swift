@@ -115,7 +115,14 @@ class Server {
                 if route.request.method != request.method {
                     continue
                 }
-                if let range = path.rangeOfString(route.request.pattern, options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil) {
+                var pattern = route.request.pattern
+                if !pattern.hasPrefix("^") {
+                    pattern = "^\(pattern)"
+                }
+                if !pattern.hasSuffix("$") {
+                    pattern += "$"
+                }
+                if let range = path.rangeOfString(pattern, options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil) {
                     let fileURL = rootURL.URLByAppendingPathComponent(route.response.resourcePath)
                     if let response = self.directMatchForURL(fileURL) {
                         return response
