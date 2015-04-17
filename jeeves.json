@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "request": {
+        "method": "GET",
+        "pattern": "/hello"
+      },
+      "response": {
+        "resourcePath": "Documents/file.dat",
+        "contentType": "text/html"
+      }
+    }
+  ]
+}

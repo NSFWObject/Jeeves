@@ -12,12 +12,18 @@ import GCDWebServerOSX
 
 class Server {
     let engine: GCDWebServer = GCDWebServer()
+
+    // file:///Users/zats/Documents/Server
     var rootServerFolder: NSURL?
+    
+    // http://192.168.0.1:8080
     var serverRootURL: NSURL? {
         get {
             return self.engine.running ? self.engine.serverURL : nil
         }
     }
+    
+    var configuration: ServerConfiguration!
     
     init() {
     }
@@ -25,8 +31,6 @@ class Server {
     func start(rootServerFolder: NSURL) -> Bool {
         self.stop()
         
-        self.rootServerFolder = rootServerFolder
-
         self.engine.removeAllHandlers()
         self.engine.addHandlerWithMatchBlock({ (method: String!, url: NSURL!, headers: [NSObject : AnyObject]!, path: String!, query: [NSObject : AnyObject]!) -> GCDWebServerRequest! in
             return GCDWebServerRequest(method: method, url: url, headers: headers, path: path, query: query)
@@ -34,14 +38,20 @@ class Server {
             return self.responseForRequest(request)
         })
 
-        let options = [
-            "Port": 8080,
-            "ServerName": "Jeeves"
-        ]
-        return self.engine.startWithOptions(options, error: nil)
+        let options = ["Port": 8080, "ServerName": "Jeeves"]
+        if !self.engine.startWithOptions(options, error: nil) {
+            return false
+        }
+        
+        self.configuration = ServerConfiguration(folderURL: rootServerFolder)
+        self.rootServerFolder = rootServerFolder
+        
+        return true
     }
     
     func stop() {
+        self.configuration = nil
+        
         if self.engine.running {
             self.engine.stop()
             self.rootServerFolder = nil
@@ -65,11 +75,18 @@ class Server {
                     return response
                 }
                 
+                // route
+                if let response = self.routeMatchForRequest(request) {
+                    return response
+                }
+                
                 return self.erroneousResponse(code: 404, message: "<h1>Not Found</h1>\(request.URL.absoluteString!) did not match any resources")
             }
         }
         return self.erroneousResponse(code: 500, message: "<h1>Uh Oh</h1>Something went terribly wrong")
     }
+    
+    // MARK: Response Matchers
     
     private func directMatchForURL(fileURL: NSURL) -> GCDWebServerResponse? {
         if isFileAtURL(fileURL) {
@@ -91,6 +108,35 @@ class Server {
         }
         return nil
     }
+    
+    private func routeMatchForRequest(request: GCDWebServerRequest) -> GCDWebServerResponse? {
+        if let path = request.URL.path, let rootURL = self.rootServerFolder {
+            for route in self.configuration.routes {
+                if route.request.method != request.method {
+                    continue
+                }
+                var pattern = route.request.pattern
+                if !pattern.hasPrefix("^") {
+                    pattern = "^\(pattern)"
+                }
+                if !pattern.hasSuffix("$") {
+                    pattern += "$"
+                }
+                if let range = path.rangeOfString(pattern, options: NSStringCompareOptions.RegularExpressionSearch, range: nil, locale: nil) {
+                    let fileURL = rootURL.URLByAppendingPathComponent(route.response.resourcePath)
+                    if let response = self.directMatchForURL(fileURL) {
+                        return response
+                    }
+                    if let response = self.indexMatchForURL(fileURL) {
+                        return response
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
+    // MARK: Private utilities
     
     private func erroneousResponse(#code: Int, message: String) -> GCDWebServerResponse {
         let response = GCDWebServerDataResponse(HTML: message)
